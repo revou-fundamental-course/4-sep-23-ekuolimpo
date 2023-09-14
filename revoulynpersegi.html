@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mari Menghitung</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: grey;
+            border: black;
+            margin: 20px auto;
+        }
+        input[type="text"] {
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Mari Menghitung Persegi</h1>
+        
+        <div class="square"></div>
+
+        <h2>Luas Persegi</h2>
+        <p>Luas Persegi = S * S</p>
+        <p>S = sisi</p>
+        <p>Hitung Luas Persegi:</p>
+        <input type="text" id="sideLength" placeholder="Masukkan panjang sisi">
+        <button onclick="calculateArea()">Hitung</button>
+        <button onclick="reset()">Reset</button>
+        <p>Hasil Luas Persegi:</p>
+        <p id="resultArea"></p>
+
+        <h2>Keliling Persegi</h2>
+        <p>Keliling Persegi = 4 * S</p>
+        <p>S = sisi</p>
+        <p>Hitung Keliling Persegi:</p>
+        <input type="text" id="sideLengthCircumference" placeholder="Masukkan panjang sisi">
+        <button onclick="calculateCircumference()">Hitung</button>
+        <button onclick="resetCircumference()">Reset</button>
+        <p>Hasil Keliling Persegi:</p>
+        <p id="resultCircumference"></p>
+    </div>
+
+    <script>
+        function calculateArea() {
+            var sideLength = parseFloat(document.getElementById("sideLength").value);
+            var area = sideLength * sideLength;
+            document.getElementById("resultArea").innerHTML = "Luas Persegi: " + area;
+        }
+
+        function reset() {
+            document.getElementById("sideLength").value = "";
+            document.getElementById("resultArea").innerHTML = "";
+        }
+
+        function calculateCircumference() {
+            var sideLength = parseFloat(document.getElementById("sideLengthCircumference").value);
+            var circumference = 4 * sideLength;
+            document.getElementById("resultCircumference").innerHTML = "Keliling Persegi: " + circumference;
+        }
+
+        function resetCircumference() {
+            document.getElementById("sideLengthCircumference").value = "";
+            document.getElementById("resultCircumference").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
